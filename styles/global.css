@@ -1,0 +1,53 @@
+:root {
+  --header-height: 50px;
+  --footer-height: 100px;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: Montserrat, sans-serif;
+}
+
+.body {
+  background-color: #eee;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+header {
+  background-color: #fff;
+  padding: 10px 20px;
+  height: var(--header-height);
+}
+
+footer {
+  background-color: #fff;
+  padding: 20px;
+  height: var(--footer-height);
+}
+
+main {
+  min-height: calc(100vh - var(--header-height) - var(--footer-height));
+  height: auto;
+  max-width: 800px;
+  width: 100%;
+  background-color: #ddd;
+  align-self: center;
+  padding: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+button {
+  border: none;
+  background-color: #fff;
+  cursor: pointer;
+  padding: 10px 20px;
+}
