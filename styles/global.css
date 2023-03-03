@@ -11,7 +11,6 @@
 }
 
 .body {
-  background-color: #eee;
   width: 100vw;
   display: flex;
   flex-direction: column;
@@ -22,12 +21,14 @@ header {
   background-color: #fff;
   padding: 10px 20px;
   height: var(--header-height);
+  z-index: 2;
 }
 
 footer {
   background-color: #fff;
   padding: 20px;
   height: var(--footer-height);
+  z-index: 2;
 }
 
 main {
@@ -35,9 +36,9 @@ main {
   height: auto;
   max-width: 800px;
   width: 100%;
-  background-color: #ddd;
   align-self: center;
   padding: 20px;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
 }
 
 a {

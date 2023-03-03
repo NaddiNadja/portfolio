@@ -1,9 +1,11 @@
 import React from "react";
 import styled from "styled-components";
+import { Column, Row } from "../containers";
 import Cell from "./cell";
 
 const Board = styled.div`
   max-width: 400px;
+  width: 100%;
   aspect-ratio: 1;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -41,7 +43,6 @@ const TicTacToe: React.FC = () => {
     ];
 
     winningCombos.map(([a, b, c]) => {
-      console.log("checking", board[a], board[b], board[c]);
       if (board[a] && board[a] === board[b] && board[a] === board[c]) {
         setWinner(board[a]);
       }
@@ -55,20 +56,24 @@ const TicTacToe: React.FC = () => {
 
   return (
     <TicTacToeContext.Provider value={{ board }}>
-      <Board>
-        {[0, 1, 2, 3, 4, 5, 6, 7, 8].map(i => (
-          <Cell
-            key={i}
-            i={i}
-            onClick={
-              winner === 0 && board[i] === 0 ? handleClick(i) : undefined
-            }
-          />
-        ))}
-      </Board>
-      <button onClick={resetBoard}>Reset board</button>
-      {winner === 1 && <p>X wins!</p>}
-      {winner === 2 && <p>O wins!</p>}
+      <Row>
+        <Board>
+          {[0, 1, 2, 3, 4, 5, 6, 7, 8].map(i => (
+            <Cell
+              key={i}
+              i={i}
+              onClick={
+                winner === 0 && board[i] === 0 ? handleClick(i) : undefined
+              }
+            />
+          ))}
+        </Board>
+        <Column>
+          <button onClick={resetBoard}>Reset board</button>
+          {winner === 1 && <p>X wins!</p>}
+          {winner === 2 && <p>O wins!</p>}
+        </Column>
+      </Row>
     </TicTacToeContext.Provider>
   );
 };
