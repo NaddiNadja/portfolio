@@ -6,6 +6,7 @@ interface Props {
   i: number;
   ballType: ballType;
   onClick?: () => void;
+  border?: boolean;
 }
 
 const getBackgroundColor = (ballType: ballType) => {
@@ -13,15 +14,15 @@ const getBackgroundColor = (ballType: ballType) => {
     case 0:
       return "transparent";
     case 1:
-      return "#EFE2BA";
+      return "var(--beige)";
     case 2:
-      return "#4056A1";
+      return "var(--blue)";
     case 3:
-      return "#F13C20";
+      return "var(--red)";
     case 4:
-      return "#D79922";
+      return "var(--yellow)";
     default:
-      return "#C5CBE3";
+      return "var(--light-blue)";
   }
 };
 
@@ -34,6 +35,8 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   border-radius: 50%;
+  aspect-ratio: 1;
+  border: ${(p: Props) => (p.border ? "10px solid var(--primary)" : "none")};
 `;
 
 const Cell: React.FC<Props> = p => {
