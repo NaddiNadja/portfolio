@@ -24,7 +24,9 @@ const ExperienceItem: React.FC<Props> = ({ company }) => {
   return (
     <>
       <h3>
-        <a href={company.link}>{company.name}</a>
+        <a href={company.link} target="_blank">
+          {company.name}
+        </a>
       </h3>
       {company.jobs.map((experience, i) => (
         <Section key={i}>
