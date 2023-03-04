@@ -1,14 +1,14 @@
+import CV from "components/cv";
 import React from "react";
 import { PageTitleContext } from "./_app";
-import AboutMe from "components/about-me";
 
-const Home = () => {
+const CVPage = () => {
   const page = React.useContext(PageTitleContext);
   React.useEffect(() => {
-    page.setTitle("About me");
+    page.setTitle("CV");
   }, [page]);
 
-  return <AboutMe />;
+  return <CV />;
 };
 
-export default Home;
+export default CVPage;
