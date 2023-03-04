@@ -1,5 +1,5 @@
-const color = "#142C45";
-const background = "#ffffff";
+const color = "var(--primary)";
+const background = "var(--contrast)";
 
 const BackgroundSvg: React.FC = () => (
   <>

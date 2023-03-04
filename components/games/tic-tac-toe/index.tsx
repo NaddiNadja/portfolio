@@ -10,7 +10,7 @@ const Board = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
-  opacity: ${(p: { winner: number }) => (p.winner ? 0.5 : 1)};
+  opacity: ${(p: { winner: number }) => (p.winner ? 0.3 : 1)};
 `;
 
 const CenteredContainer = styled.div`

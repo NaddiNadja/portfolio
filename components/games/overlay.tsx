@@ -14,6 +14,8 @@ const Container = styled.div`
   width: 100%;
   height: 200px;
   display: flex;
+  flex-direction: column;
+  gap: 20px;
   justify-content: center;
   align-items: center;
   font-size: 30px;
@@ -21,18 +23,13 @@ const Container = styled.div`
   z-index: 2;
 `;
 
-const Button = styled.button`
-  background-color: #c5cbe3;
-  z-index: 2;
-`;
+const Button = styled.button``;
 
 const Overlay: React.FC<Props> = ({ message, onClick }) => {
   return (
     <Container>
-      <Column>
-        {message}
-        <Button onClick={onClick}>Play again</Button>
-      </Column>
+      {message}
+      <Button onClick={onClick}>Play again</Button>
     </Container>
   );
 };
