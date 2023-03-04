@@ -14,6 +14,11 @@ const Content = styled.div`
   height: 100%;
 `;
 
+const SocialsLink = styled(Link)`
+  aspect-ratio: 1;
+  height: 25px;
+`;
+
 const Footer: React.FC = () => {
   return (
     <footer>
@@ -23,15 +28,15 @@ const Footer: React.FC = () => {
           <span>nadjabrixkoch@hotmail.com</span>
         </Column>
         <Row>
-          <Link target="_blank" href="https://github.com/NaddiNadja">
+          <SocialsLink target="_blank" href="https://github.com/NaddiNadja">
             <GithubIcon />
-          </Link>
-          <Link
+          </SocialsLink>
+          <SocialsLink
             target="_blank"
             href="https://www.linkedin.com/in/nadjabrixkoch/"
           >
             <LinkedinIcon />
-          </Link>
+          </SocialsLink>
         </Row>
       </Content>
     </footer>

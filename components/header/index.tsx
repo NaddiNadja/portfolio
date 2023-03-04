@@ -12,33 +12,35 @@ const Content = styled.div`
   height: 100%;
 `;
 
-const Name = styled.span`
-  text-transform: uppercase;
-`;
-
 const Navigation = styled.nav`
   display: flex;
   gap: 20px;
   flex-direction: row;
-  margin: 0px 20px;
 `;
 
 const Header: React.FC = () => {
   const [open, setOpen] = React.useState(false);
 
+  const handleOpen = () => {
+    setOpen(prev => !prev);
+    if (!open) setTimeout(() => setOpen(false), 4000);
+  };
+
   return (
     <header>
       <Content>
-        <Name>Nadja Brix Koch</Name>
         <Navigation>
-          <Select onClick={() => setOpen(prev => !prev)}>
-            <Name>Games</Name>
+          <Link href="/">Nadja Brix Koch</Link>
+        </Navigation>
+        <Navigation>
+          <Select onClick={handleOpen}>
+            <span>Games</span>
             <OptionContainer open={open}>
-              <Link href="/tic-tac-toe">Tic Tac Toe</Link>
               <Link href="/bubble-game">Bubble game</Link>
+              <Link href="/tic-tac-toe">Tic Tac Toe</Link>
             </OptionContainer>
           </Select>
-          <Link href="/">CV</Link>
+          <Link href="/cv">CV</Link>
         </Navigation>
       </Content>
     </header>
