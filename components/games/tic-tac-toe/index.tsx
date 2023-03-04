@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Column, Row } from "../containers";
+import Overlay from "../overlay";
 import Cell from "./cell";
 
 const Board = styled.div`
@@ -10,6 +10,12 @@ const Board = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
+  opacity: ${(p: { winner: number }) => (p.winner ? 0.5 : 1)};
+`;
+
+const CenteredContainer = styled.div`
+  display: flex;
+  justify-content: center;
 `;
 
 export const TicTacToeContext = React.createContext<{
@@ -21,7 +27,7 @@ const TicTacToe: React.FC = () => {
     0, 0, 0, 0, 0, 0, 0, 0, 0,
   ]);
   const [turn, setTurn] = React.useState(false);
-  const [winner, setWinner] = React.useState<0 | 1 | 2>(0);
+  const [winner, setWinner] = React.useState<0 | 1 | 2 | 3>(0);
 
   const handleClick = (i: number) => () => {
     let newBoard = [...board];
@@ -31,6 +37,9 @@ const TicTacToe: React.FC = () => {
   };
 
   React.useEffect(() => {
+    const isBoardFull = board.every(cell => cell !== 0);
+    if (isBoardFull) setWinner(3);
+
     const winningCombos = [
       [0, 1, 2],
       [3, 4, 5],
@@ -55,9 +64,21 @@ const TicTacToe: React.FC = () => {
   };
 
   return (
-    <TicTacToeContext.Provider value={{ board }}>
-      <Row>
-        <Board>
+    <CenteredContainer>
+      <TicTacToeContext.Provider value={{ board }}>
+        {winner !== 0 && (
+          <Overlay
+            message={
+              winner === 3
+                ? "It's a tie!"
+                : winner === 1
+                ? "X wins!"
+                : "O wins!"
+            }
+            onClick={resetBoard}
+          />
+        )}
+        <Board winner={winner}>
           {[0, 1, 2, 3, 4, 5, 6, 7, 8].map(i => (
             <Cell
               key={i}
@@ -68,13 +89,8 @@ const TicTacToe: React.FC = () => {
             />
           ))}
         </Board>
-        <Column>
-          <button onClick={resetBoard}>Reset board</button>
-          {winner === 1 && <p>X wins!</p>}
-          {winner === 2 && <p>O wins!</p>}
-        </Column>
-      </Row>
-    </TicTacToeContext.Provider>
+      </TicTacToeContext.Provider>
+    </CenteredContainer>
   );
 };
 

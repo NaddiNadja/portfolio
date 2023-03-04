@@ -1,3 +1,4 @@
+import { platform } from "os";
 import React from "react";
 import styled from "styled-components";
 import { TicTacToeContext } from ".";
@@ -8,20 +9,22 @@ interface Props {
 }
 
 const Container = styled.div`
-  background-color: #fff;
+  background-color: #efe2ba;
   cursor: ${(p: Props) => (p.onClick ? "pointer" : "default")};
-  flex-grow: 1;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 0 4px #0000003e;
+  borderradius: 10px;
 `;
+//box-shadow: 0 0 4px #0000003e;
 
 const Content = styled.div`
   position: absolute;
   font-size: 100px;
   font-weight: 700;
+  color: ${(p: { player?: number }) =>
+    p.player === 1 ? "#4056A1" : "#F13C20"};
 `;
 
 const Cell: React.FC<Props> = ({ i, onClick }) => {
@@ -29,9 +32,9 @@ const Cell: React.FC<Props> = ({ i, onClick }) => {
 
   return (
     <Container onClick={onClick} i={i}>
-      {board[i] === 0 && <Content></Content>}
-      {board[i] === 1 && <Content>X</Content>}
-      {board[i] === 2 && <Content>O</Content>}
+      {board[i] === 0 && <Content />}
+      {board[i] === 1 && <Content player={1}>X</Content>}
+      {board[i] === 2 && <Content player={2}>O</Content>}
     </Container>
   );
 };
