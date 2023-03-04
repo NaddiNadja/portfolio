@@ -24,10 +24,10 @@ const EducationItem: React.FC<Props> = ({ education }) => {
   return (
     <Section>
       <Title>
-        <strong>
+        <h4>
           {education.title} at{" "}
           <a href={education.school.link}>{education.school.name}</a>
-        </strong>
+        </h4>
         <span>{education.years}</span>
       </Title>
       <Description>{education.description}</Description>

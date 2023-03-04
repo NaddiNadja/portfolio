@@ -1,6 +1,12 @@
 :root {
   --header-height: 50px;
   --footer-height: 100px;
+  --primary: #142C45;
+  --yellow: #D79922;
+  --beige: #EFE2BA;
+  --red: #F13C20;
+  --blue: #4056A1;
+  --light-blue: #C5CBE3;
 }
 
 * {
@@ -19,14 +25,14 @@
 
 header {
   background-color: #fff;
-  padding: 10px 20px;
+  padding: 10px 50px;
   height: var(--header-height);
   z-index: 2;
 }
 
 footer {
   background-color: #fff;
-  padding: 20px;
+  padding: 20px 50px;
   height: var(--footer-height);
   z-index: 2;
 }
@@ -39,16 +45,48 @@ main {
   align-self: center;
   padding: 20px;
   box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
 }
 
 a {
   text-decoration: none;
+  color: var(--red);
+}
+
+nav a {
   color: #000;
 }
 
 button {
   border: none;
-  background-color: #fff;
+  background-color: var(--primary);
   cursor: pointer;
   padding: 10px 20px;
+  border-radius: 50px;
+  color: #fff;
+}
+
+h2 {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  color: var(--red);
+}
+h2:first-child {
+  margin-top: 0;
+}
+
+h3 {
+  margin-top: 40px;
+  color: var(--red);
+}
+h3:first-of-type {
+  margin-top: 0;
+}
+
+h4 {
+  margin-top: 40px;
+  color: var(--blue);
+}
+h4:first-of-type {
+  margin-top: 0;
 }

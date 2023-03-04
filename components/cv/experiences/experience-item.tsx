@@ -17,25 +17,25 @@ const Description = styled.p`
 `;
 
 const Section = styled.section`
-  margin: 20px 0px;
+  margin: 20px 0px 20px 10px;
 `;
 
 const ExperienceItem: React.FC<Props> = ({ company }) => {
   return (
-    <Section>
+    <>
       <h3>
         <a href={company.link}>{company.name}</a>
       </h3>
       {company.jobs.map((experience, i) => (
         <Section key={i}>
           <Title>
-            <strong>{experience.title}</strong>
+            <h4>{experience.title}</h4>
             <span>{experience.years}</span>
           </Title>
           <Description>{experience.description}</Description>
         </Section>
       ))}
-    </Section>
+    </>
   );
 };
 
