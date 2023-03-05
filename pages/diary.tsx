@@ -1,14 +1,14 @@
 import React from "react";
+import Diary from "components/projects/diary";
 import { PageTitleContext } from "./_app";
-import AboutMe from "components/about";
 
-const Home = () => {
+const DiaryPage = () => {
   const page = React.useContext(PageTitleContext);
   React.useEffect(() => {
-    page.setTitle("About me");
+    page.setTitle("Diary project");
   }, [page]);
 
-  return <AboutMe />;
+  return <Diary />;
 };
 
-export default Home;
+export default DiaryPage;

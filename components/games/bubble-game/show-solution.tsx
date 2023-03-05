@@ -1,12 +1,12 @@
 import React from "react";
+import styled from "styled-components";
+import { Row } from "components/containers";
 import { getCoordFromIndex } from "./logic/util";
 import { coord } from "./logic/util/types";
 import { boardAfterClick } from "./logic/solution";
 import Cell from "./cell";
 import Board from "./board";
 import { BubbleGameContext } from ".";
-import { Row } from "@/components/containers";
-import styled from "styled-components";
 
 interface Props {
   moves: coord[];

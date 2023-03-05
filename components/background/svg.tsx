@@ -3,7 +3,7 @@ const background = "var(--contrast)";
 
 const BackgroundSvg: React.FC = () => (
   <>
-    <svg viewBox="0 0 1984.25 2834.65" width="100%">
+    <svg viewBox="0 300 1984.25 2834.65" width="100%">
       <g id="Outer">
         <g>
           <defs>

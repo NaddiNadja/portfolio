@@ -13,14 +13,14 @@ const Experiences: React.FC = () => {
             <ExperienceItem key={i} company={company} />
           ))}
       </section>
-      <h2>Voluntary work</h2>
+      {/* <h2>Voluntary work</h2>
       <section>
         {experiences
           .filter(c => c.volunteer)
           .map((company, i) => (
             <ExperienceItem key={i} company={company} />
           ))}
-      </section>
+      </section> */}
     </>
   );
 };

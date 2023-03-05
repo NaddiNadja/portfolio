@@ -1,6 +1,6 @@
-import useGetScroll from "@/hooks/get-scroll";
 import React from "react";
 import styled from "styled-components";
+import useGetScroll from "hooks/get-scroll";
 import BackgroundSvg from "./svg";
 
 interface Props {
@@ -16,12 +16,12 @@ const Container = styled.div`
 `;
 
 const ContainerRight = styled(Container)`
-  top: ${({ yScroll }: Props) => `calc(20% - ${0.5 * yScroll}px)`};
+  top: ${({ yScroll }: Props) => `calc(25% - ${0.5 * yScroll}px)`};
   right: 0;
 `;
 
 const ContainerLeft = styled(Container)`
-  top: ${({ yScroll }: Props) => `calc(60% - ${0.5 * yScroll}px)`};
+  top: ${({ yScroll }: Props) => `calc(65% - ${0.5 * yScroll}px)`};
   left: 0;
 `;
 

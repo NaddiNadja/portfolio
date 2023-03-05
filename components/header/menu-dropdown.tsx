@@ -1,5 +1,9 @@
-import { PropsWithChildren } from "react";
+import React, { PropsWithChildren } from "react";
 import styled from "styled-components";
+
+interface Props {
+  title: string;
+}
 
 interface ModalProps {
   open: boolean;
@@ -35,21 +39,38 @@ const Arrow = styled.span`
   transition: transform 0.3s;
 `;
 
-export const OptionTitle: React.FC<PropsWithChildren<{ open: boolean }>> = ({
-  children,
-  open,
-}) => {
-  return (
-    <Title>
-      {children}
-      <Arrow open={open}>∧</Arrow>
-    </Title>
-  );
-};
-
-export const Select = styled.div`
+const SelectContainer = styled.div`
   position: relative;
   cursor: pointer;
   padding: 0px 10px;
   text-transform: uppercase;
 `;
+
+const MenuDropdown: React.FC<PropsWithChildren<Props>> = ({
+  title,
+  children,
+}) => {
+  const [open, setOpen] = React.useState(false);
+  const [timeoutId, setTimeoutId] = React.useState<NodeJS.Timeout>();
+
+  const handleOpen = () => {
+    setOpen(prev => !prev);
+    if (!open) {
+      setTimeoutId(setTimeout(() => setOpen(false), 4000));
+    } else {
+      clearTimeout(timeoutId);
+    }
+  };
+
+  return (
+    <SelectContainer onClick={handleOpen}>
+      <Title>
+        <span>{title}</span>
+        <Arrow open={open}>∧</Arrow>
+      </Title>
+      <OptionContainer open={open}>{children}</OptionContainer>
+    </SelectContainer>
+  );
+};
+
+export default MenuDropdown;

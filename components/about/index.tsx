@@ -1,7 +1,7 @@
 import React from "react";
-import useGetAge from "@/hooks/get-age";
+import useGetAge from "hooks/get-age";
 
-const AboutMe: React.FC = () => {
+const About: React.FC = () => {
   const getAge = useGetAge();
 
   return (
@@ -21,11 +21,12 @@ const AboutMe: React.FC = () => {
         <h3>About this site</h3>
         <p>
           I have made this page to be able to give interested people a sneak
-          peak into some of my projects.
+          peak into some of my projects. The <em>Projects</em> menu item holds
+          information about some of my projects, including this page itself.
         </p>
       </section>
     </>
   );
 };
 
-export default AboutMe;
+export default About;
