@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import { Column } from "../containers";
+import { Row } from "../containers";
 
 interface Props {
   message: string;
-  onClick: () => void;
+  buttons: { onClick: () => void; text: string }[];
 }
 
 const Container = styled.div`
@@ -23,15 +23,19 @@ const Container = styled.div`
   z-index: 2;
 `;
 
-const Button = styled.button``;
-
-const Overlay: React.FC<Props> = ({ message, onClick }) => {
+const GameOverlay: React.FC<Props> = ({ message, buttons }) => {
   return (
     <Container>
       {message}
-      <Button onClick={onClick}>Play again</Button>
+      <Row>
+        {buttons.map(({ text, onClick }, i) => (
+          <button onClick={onClick} key={i}>
+            {text}
+          </button>
+        ))}
+      </Row>
     </Container>
   );
 };
 
-export default Overlay;
+export default GameOverlay;

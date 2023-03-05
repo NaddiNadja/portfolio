@@ -8,13 +8,14 @@ interface Props {
 }
 
 const Container = styled.div`
-  background-color: var(--beige);
+  background-color: transparent;
   cursor: ${(p: Props) => (p.onClick ? "pointer" : "default")};
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  borderradius: 10px;
+  border-radius: 10px;
+  border: 1px solid var(--yellow);
 `;
 //box-shadow: 0 0 4px #0000003e;
 

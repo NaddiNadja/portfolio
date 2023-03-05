@@ -31,7 +31,7 @@ const BubbleGamePlay: React.FC<Props> = ({ onShowSolution }) => {
         ))}
       </Board>
       <button onClick={onShowSolution} disabled={!!endMessage}>
-        Show solution
+        Calculate solution
       </button>
     </>
   );

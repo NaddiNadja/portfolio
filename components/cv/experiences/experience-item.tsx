@@ -9,7 +9,6 @@ interface Props {
 
 const Title = styled(Row)`
   justify-content: space-between;
-  margin-bottom: 8px;
 `;
 
 const Description = styled.p`

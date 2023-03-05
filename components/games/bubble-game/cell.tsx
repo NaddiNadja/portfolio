@@ -36,7 +36,7 @@ const Container = styled.div`
   align-items: center;
   border-radius: 50%;
   aspect-ratio: 1;
-  border: ${(p: Props) => (p.border ? "10px solid var(--primary)" : "none")};
+  border: ${(p: Props) => (p.border ? "10px solid var(--text)" : "none")};
 `;
 
 const Cell: React.FC<Props> = p => {

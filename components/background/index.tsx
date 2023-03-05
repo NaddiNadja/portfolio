@@ -7,34 +7,34 @@ interface Props {
   yScroll: number;
 }
 
-const ContainerA = styled.div`
+const Container = styled.div`
   position: fixed;
   z-index: 0;
-  top: ${({ yScroll }: Props) => `calc(20% - ${0.5 * yScroll}px)`};
-  right: 0;
   width: calc(500px + 20%);
   height: 100%;
+  opacity: 0.8;
 `;
 
-const ContainerB = styled.div`
-  position: fixed;
-  z-index: 0;
+const ContainerRight = styled(Container)`
+  top: ${({ yScroll }: Props) => `calc(20% - ${0.5 * yScroll}px)`};
+  right: 0;
+`;
+
+const ContainerLeft = styled(Container)`
   top: ${({ yScroll }: Props) => `calc(60% - ${0.5 * yScroll}px)`};
   left: 0;
-  width: calc(500px + 20%);
-  height: 100%;
 `;
 
 const Background: React.FC = () => {
   const scroll = useGetScroll();
   return (
     <>
-      <ContainerA yScroll={scroll.y}>
+      <ContainerLeft yScroll={scroll.y}>
         <BackgroundSvg />
-      </ContainerA>
-      <ContainerB yScroll={scroll.y}>
+      </ContainerLeft>
+      <ContainerRight yScroll={scroll.y}>
         <BackgroundSvg />
-      </ContainerB>
+      </ContainerRight>
     </>
   );
 };

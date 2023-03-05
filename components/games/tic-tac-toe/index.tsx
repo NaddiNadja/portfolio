@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import Overlay from "../overlay";
+import GameOverlay from "../overlay";
+import AboutTicTacToe from "./about";
 import Cell from "./cell";
 
 const Board = styled.div`
@@ -64,10 +65,10 @@ const TicTacToe: React.FC = () => {
   };
 
   return (
-    <CenteredContainer>
-      <TicTacToeContext.Provider value={{ board }}>
+    <TicTacToeContext.Provider value={{ board }}>
+      <CenteredContainer>
         {winner !== 0 && (
-          <Overlay
+          <GameOverlay
             message={
               winner === 3
                 ? "It's a tie!"
@@ -75,7 +76,7 @@ const TicTacToe: React.FC = () => {
                 ? "X wins!"
                 : "O wins!"
             }
-            onClick={resetBoard}
+            buttons={[{ onClick: resetBoard, text: "Play again" }]}
           />
         )}
         <Board winner={winner}>
@@ -89,8 +90,9 @@ const TicTacToe: React.FC = () => {
             />
           ))}
         </Board>
-      </TicTacToeContext.Provider>
-    </CenteredContainer>
+      </CenteredContainer>
+      <AboutTicTacToe />
+    </TicTacToeContext.Provider>
   );
 };
 

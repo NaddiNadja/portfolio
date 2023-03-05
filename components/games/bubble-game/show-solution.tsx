@@ -10,6 +10,7 @@ import styled from "styled-components";
 
 interface Props {
   moves: coord[];
+  onPlay: () => void;
 }
 
 const ButtonRow = styled(Row)`
@@ -19,7 +20,7 @@ const ButtonRow = styled(Row)`
   }
 `;
 
-const BubbleGameSolution: React.FC<Props> = ({ moves }) => {
+const BubbleGameSolution: React.FC<Props> = ({ moves, onPlay }) => {
   const { board, setBoard, endMessage, setEndMessage } =
     React.useContext(BubbleGameContext);
   const [currentMove, setCurrentMove] = React.useState(0);
@@ -93,6 +94,9 @@ const BubbleGameSolution: React.FC<Props> = ({ moves }) => {
         </button>
         <button onClick={handleAutomatic} disabled={!!endMessage}>
           {timeoutId ? "Stop automatic" : "Start automatic"}
+        </button>
+        <button onClick={onPlay} disabled={!!endMessage || !!timeoutId}>
+          Go back to play
         </button>
       </ButtonRow>
     </>

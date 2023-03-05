@@ -5,10 +5,12 @@ import educations from "./education-data";
 const Education: React.FC = () => {
   return (
     <>
-      <h2>Higher Education</h2>
-      {educations.map(education => (
-        <EducationItem key={education.title} education={education} />
-      ))}
+      <h2>Education</h2>
+      <section>
+        {educations.map(education => (
+          <EducationItem key={education.title} education={education} />
+        ))}
+      </section>
     </>
   );
 };

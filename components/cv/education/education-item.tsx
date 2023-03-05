@@ -9,7 +9,6 @@ interface Props {
 
 const Title = styled(Row)`
   justify-content: space-between;
-  margin-bottom: 8px;
 `;
 
 const Description = styled.p`
@@ -17,7 +16,7 @@ const Description = styled.p`
 `;
 
 const Section = styled.section`
-  margin: 20px 0px;
+  margin: 20px 0px 20px 10px;
 `;
 
 const EducationItem: React.FC<Props> = ({ education }) => {
