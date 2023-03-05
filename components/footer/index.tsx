@@ -25,7 +25,7 @@ const Footer: React.FC = () => {
       <Content>
         <Column>
           <strong>Contact</strong>
-          <span>nadjabrixkoch@hotmail.com</span>
+          <span>naddinadja@outlook.com</span>
         </Column>
         <Row>
           <SocialsLink target="_blank" href="https://github.com/NaddiNadja">
