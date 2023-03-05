@@ -5,8 +5,10 @@ import Experiences from "./experiences";
 const CV: React.FC = () => {
   return (
     <>
-      <Experiences />
-      <Education />
+      <section>
+        <Experiences />
+        <Education />
+      </section>
     </>
   );
 };

@@ -15,7 +15,6 @@ const Disclaimer = styled.p`
 const Diary: React.FC = () => {
   return (
     <>
-      <h2>Digital diary</h2>
       <p>
         In my free time, I have developed a digital diary for personal use only.
         I use it to keep track of thoughts, dreams and feelings.
@@ -26,7 +25,7 @@ const Diary: React.FC = () => {
         The server is deployed on Repl.it and connects to a MongoDB database
         where all data is stored.
       </p>
-      <h3>Functionalities</h3>
+      <h2>Functionalities</h2>
       <ImageRow
         imageElement={
           <Image
@@ -38,7 +37,7 @@ const Diary: React.FC = () => {
         }
         position="right"
       >
-        <h4>Diary overview</h4>
+        <h3>Diary overview</h3>
         <p>
           There is an overview of all posts, showing the newest at the top.
           There are filtering options for the selected mood, date and a search
@@ -56,7 +55,7 @@ const Diary: React.FC = () => {
         }
         position="left"
       >
-        <h4>Creating posts</h4>
+        <h3>Creating posts</h3>
         <p>
           Posts in the diary are tied to a specific feeling, which are divided
           into categories. Once a feeling is selected, the user can write a post
@@ -74,7 +73,7 @@ const Diary: React.FC = () => {
         }
         position="right"
       >
-        <h4>Statistics</h4>
+        <h3>Statistics</h3>
         <p>
           The statistics module shows a table over which types of feelings are
           posted on each day. The table shows the posts for a single month, and
@@ -92,7 +91,7 @@ const Diary: React.FC = () => {
         }
         position="left"
       >
-        <h4>Mood tracker</h4>
+        <h3>Mood tracker</h3>
         <p>
           The mood tracker module let&apos; the user rate their mood each day on
           a scale from 1 to 5. The user can then track their mood over time with
