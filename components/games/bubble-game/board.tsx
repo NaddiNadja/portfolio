@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const Board = styled.div`
-  max-width: 700px;
+  max-width: 600px;
   width: 100%;
   aspect-ratio: 11/12;
   display: grid;

@@ -31,6 +31,7 @@ const App = ({ Component, pageProps }: AppProps) => {
         <PageTitleContext.Provider value={{ title, setTitle }}>
           <Header />
           <main>
+            <h1>{title}</h1>
             <Component {...pageProps} />
           </main>
           <Footer />

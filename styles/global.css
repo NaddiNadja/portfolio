@@ -1,15 +1,15 @@
 :root {
   --header-height: 50px;
   --footer-height: 100px;
-  --primary: #142C45;
-  --yellow: #D79922;
-  --beige: #EFE2BA;
-  --red: #F13C20;
-  --blue: #4056A1;
-  --light-blue: #C5CBE3;
+  --primary: #142c45;
+  --yellow: #d79922;
+  --beige: #efe2ba;
+  --red: #d82521;
+  --blue: #374f93;
   --text: #000;
   --contrast: #fff;
   --box-shadow: rgba(0, 0, 0, 0.1);
+  --grey: #cacaca;
 }
 
 * {
@@ -68,7 +68,7 @@ main {
 
 a {
   text-decoration: underline dotted;
-  color: var(--red);
+  color: var(--blue);
 }
 
 nav a {
@@ -99,38 +99,56 @@ p:last-child {
 }
 
 h1 {
-  margin-bottom: 20px;
-  color: var(--primary);
-}
-
-h2 {
+  font-size: 26px;
+  font-weight: bold;
   margin-top: 50px;
   margin-bottom: 20px;
   color: var(--yellow);
 }
-h2:first-child {
+h1:first-child {
   margin-top: 0;
 }
 
-h3 {
+h2 {
+  font-size: 22px;
+  font-weight: bold;
   margin-top: 30px;
   margin-bottom: 10px;
   color: var(--red);
+}
+h2:first-child {
+  margin-top: 0;
+}
+h2 > a {
+  color: var(--red);
+}
+
+h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 8px;
+  color: var(--blue);
 }
 h3:first-child {
   margin-top: 0;
 }
 
+
 h4 {
+  font-size: 14px;
+  font-weight: bold;
   margin-top: 20px;
   margin-bottom: 8px;
-  color: var(--blue);
+  color: var(--primary);
+  text-transform: uppercase;
 }
 h4:first-child {
   margin-top: 0;
 }
 
-@media (prefers-color-scheme: dar) { /* misspelled on purpose, darkmode disabled */
+/*
+@media (prefers-color-scheme: dark) {
   :root {
     --primary: #d9e2ec;
     --yellow: #D79922;
@@ -143,3 +161,4 @@ h4:first-child {
     --box-shadow: rgba(255, 255, 255, 0.05);
   }
 }
+*/

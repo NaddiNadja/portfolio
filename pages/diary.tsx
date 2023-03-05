@@ -5,7 +5,7 @@ import { PageTitleContext } from "./_app";
 const DiaryPage = () => {
   const page = React.useContext(PageTitleContext);
   React.useEffect(() => {
-    page.setTitle("Diary project");
+    page.setTitle("Digital diary");
   }, [page]);
 
   return <Diary />;

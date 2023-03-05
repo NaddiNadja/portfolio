@@ -5,7 +5,7 @@ import AboutMe from "components/about";
 const Home = () => {
   const page = React.useContext(PageTitleContext);
   React.useEffect(() => {
-    page.setTitle("About me");
+    page.setTitle("About");
   }, [page]);
 
   return <AboutMe />;

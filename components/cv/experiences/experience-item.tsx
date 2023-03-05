@@ -15,6 +15,10 @@ const Description = styled.p`
   max-width: 600px;
 `;
 
+const Year = styled.span`
+  font-size: 14px;
+`;
+
 const Section = styled.section`
   margin: 20px 0px 20px 10px;
 `;
@@ -31,7 +35,7 @@ const ExperienceItem: React.FC<Props> = ({ company }) => {
         <Section key={i}>
           <Title>
             <h4>{experience.title}</h4>
-            <span>{experience.years}</span>
+            <Year>{experience.years}</Year>
           </Title>
           <Description>{experience.description}</Description>
         </Section>

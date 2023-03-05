@@ -5,7 +5,7 @@ import { PageTitleContext } from "./_app";
 const PortfolioPage = () => {
   const page = React.useContext(PageTitleContext);
   React.useEffect(() => {
-    page.setTitle("Portfolio project");
+    page.setTitle("Portfolio");
   }, [page]);
 
   return <Portfolio />;

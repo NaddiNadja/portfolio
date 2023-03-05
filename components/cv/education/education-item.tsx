@@ -15,6 +15,10 @@ const Description = styled.p`
   max-width: 600px;
 `;
 
+const Year = styled.span`
+  font-size: 14px;
+`;
+
 const Section = styled.section`
   margin: 20px 0px 20px 10px;
 `;
@@ -29,7 +33,7 @@ const EducationItem: React.FC<Props> = ({ education }) => {
             {education.school.name}
           </a>
         </h4>
-        <span>{education.years}</span>
+        <Year>{education.years}</Year>
       </Title>
       <Description>{education.description}</Description>
     </Section>
