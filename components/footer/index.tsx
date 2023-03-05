@@ -12,6 +12,9 @@ const Content = styled.div`
   justify-content: space-between;
   align-items: center;
   height: 100%;
+  @media (max-width: 600px) {
+    font-size: 14px;
+  }
 `;
 
 const SocialsLink = styled(Link)`

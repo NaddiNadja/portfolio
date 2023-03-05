@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Link from "next/link";
-import MenuDropdown from "./menu-dropdown";
+import RightNav from "./right-nav";
 
 const Content = styled.div`
   display: flex;
@@ -12,7 +12,7 @@ const Content = styled.div`
   height: 100%;
 `;
 
-const Navigation = styled.nav`
+const NavigationLeft = styled.nav`
   display: flex;
   gap: 20px;
   flex-direction: row;
@@ -23,20 +23,10 @@ const Header: React.FC = () => {
   return (
     <header>
       <Content>
-        <Navigation id="left-nav">
+        <NavigationLeft>
           <Link href="/">Nadja Brix Koch</Link>
-        </Navigation>
-        <Navigation id="right-nav">
-          <Link href="/cv">CV</Link>
-          <MenuDropdown title="Projects">
-            <Link href="/diary">Digital diary</Link>
-            <Link href="/portfolio">Portfolio</Link>
-          </MenuDropdown>
-          <MenuDropdown title="Games">
-            <Link href="/bubble-game">Bubble game</Link>
-            <Link href="/tic-tac-toe">Tic Tac Toe</Link>
-          </MenuDropdown>
-        </Navigation>
+        </NavigationLeft>
+        <RightNav />
       </Content>
     </header>
   );
