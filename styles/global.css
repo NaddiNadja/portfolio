@@ -118,7 +118,7 @@ h4:first-child {
   margin-top: 0;
 }
 
-@media (prefers-color-scheme: dar) { /* misspelled on purpose */
+@media (prefers-color-scheme: dar) { /* misspelled on purpose, darkmode disabled */
   :root {
     --primary: #d9e2ec;
     --yellow: #D79922;

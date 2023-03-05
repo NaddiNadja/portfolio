@@ -1,20 +1,16 @@
 import React from "react";
-import styled from "styled-components";
 import BackgroundSvg from "components/background/svg";
-import { Column, Row } from "components/containers";
+import ImageRow from "components/image-row";
+import ColorPaletteBox from "./color-palette-box";
+import styled from "styled-components";
 
-const ImageRow = styled(Row)`
-  margin: 40px 0;
-  gap: 30px;
-  padding-right: 20px;
-`;
-
-const DescriptionColumn = styled(Column)`
-  width: 70%;
-`;
-
-const ImageColumn = styled(Column)`
-  width: 30%;
+const Grid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  @media (max-width: 600px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
 `;
 
 const Portfolio: React.FC = () => {
@@ -33,18 +29,30 @@ const Portfolio: React.FC = () => {
         script, that I have developed to calculate solutions to the game boards.
       </p>
 
-      <ImageRow>
-        <DescriptionColumn>
-          <h3>Background</h3>
-          <p>
-            The background on this page, is drawn entirely by me, using Adobe
-            Illustrator.
-          </p>
-        </DescriptionColumn>
-        <ImageColumn>
-          <BackgroundSvg />
-        </ImageColumn>
+      <ImageRow
+        imageElement={<BackgroundSvg />}
+        position="right"
+        widths={{ description: "70%", image: "30%" }}
+      >
+        <h3>Background</h3>
+        <p>
+          The background on this page, is drawn entirely by me, using Adobe
+          Illustrator.
+        </p>
       </ImageRow>
+
+      <h3>Design and color palette</h3>
+      <p>
+        I am in no way a designer, but I have tried to create a design for this
+        page that is simple, but has a pop of color.
+      </p>
+      <Grid>
+        <ColorPaletteBox variableName="--primary" />
+        <ColorPaletteBox variableName="--yellow" />
+        <ColorPaletteBox variableName="--beige" />
+        <ColorPaletteBox variableName="--red" />
+        <ColorPaletteBox variableName="--blue" />
+      </Grid>
     </>
   );
 };

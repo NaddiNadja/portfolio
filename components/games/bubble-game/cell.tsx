@@ -22,7 +22,7 @@ const getBackgroundColor = (ballType: ballType) => {
     case 4:
       return "var(--yellow)";
     default:
-      return "var(--light-blue)";
+      return "transparent";
   }
 };
 
