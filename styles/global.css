@@ -34,6 +34,18 @@ header, footer {
   padding: 20px 60px;
 }
 
+@media (max-width: 860px) {
+  header, footer {
+    padding: 20px calc((100vw - 800px) / 2 + 30px);
+  }
+}
+
+@media (max-width: 800px) {
+  header, footer {
+    padding: 20px 30px;
+  }
+}
+
 header {
   height: var(--header-height);
 }
