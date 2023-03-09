@@ -13,6 +13,9 @@ const Container = styled.div`
   width: calc(500px + 20%);
   height: 100%;
   opacity: 0.8;
+  @media (max-width: 800px) {
+    display: none;
+  }
 `;
 
 const ContainerRight = styled(Container)`
